@@ -1,0 +1,15 @@
+{
+	"name": "redis-eventemitter-cli",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"bin": {
+		"redis-eventemitter": "index.js"
+	},
+	"author": "",
+	"license": "",
+	"dependencies": {
+		"optimist": "0.6.0",
+		"redis-eventemitter": "0.4.0"
+	}
+}
