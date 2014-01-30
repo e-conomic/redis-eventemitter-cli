@@ -13,14 +13,11 @@ var printUsage = function() {
 	console.log('');
 	console.log('  Commands:');
 	console.log('');
-	console.log('  emit    Emits an event. Requires --channel and --message');
-	console.log('  on      Listens for events. Requires --pattern');
+	console.log('  emit [channel] [message] [options]  Emits an event.');
+	console.log('  on   [pattern] [options]            Listens for events.');
 	console.log('');
 	console.log('  Options:');
 	console.log('');
-	console.log('    --channel -c A redis pubsub channel');
-	console.log('    --message -m A string with a json encoded message to send to the redis pubsub');
-	console.log('    --pattern A redis pattern. Used for listeninf to events (command "on")');
 	console.log('    --host -h The host of the redis server (defaults to localhost)');
 	console.log('    --port -p The port of the redis server (defaults to 6397)');
 	console.log('    --password -a The password of the redis server');
@@ -31,7 +28,7 @@ var printUsage = function() {
 	console.log('        "host": "localhost",');
 	console.log('        "port": "6379",');
 	console.log('        "password": "mypassword"');
-	console.log('    }');
+	console.log('    }\n');
 };
 
 var configFile = path.join(process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE, '.redis-eventemitter-cli.json');
@@ -42,9 +39,6 @@ try {
 	config = {};
 }
 
-var message = argv.m || argv.message || config.message;
-var channel = argv.c || argv.channel || config.channel;
-var pattern = argv.pattern;
 var host = argv.h || argv.host || config.host || 'localhost';
 var port = argv.p || argv.port || config.port || 6379;
 var password = argv.a || argv.password || config.password;
@@ -62,6 +56,8 @@ pubsub = redisev({
 });
 
 if (command === 'emit') {
+	var channel = argv._[1];
+	var message = argv._[2];
 	if (!message || !channel) {
 		printUsage();
 		process.exit(1);
@@ -71,6 +67,7 @@ if (command === 'emit') {
 		process.exit(0);
 	});
 } else if(command === 'on') {
+	var pattern = argv._[1];
 	if (!pattern) {
 		printUsage();
 		process.exit(1);

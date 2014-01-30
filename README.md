@@ -13,18 +13,17 @@ npm install redis-eventemitter-cli -g
 ## Usage
 
 ```
-  Usage: redis-eventemitter [command] [options]
+Command line tool for redis-eventemitter.
+
+  Usage: node ./index [command] [options]
 
   Commands:
 
-  emit    Emits an event. Requires --channel and --message
-  on      Listens for events. Requires --pattern
+  emit [channel] [message] [options]  Emits an event.
+  on   [pattern] [options]            Listens for events.
 
   Options:
 
-    --channel -c A redis pubsub channel
-    --message -m A string with a json encoded message to send to the redis pubsub
-    --pattern A redis pattern. Used for listeninf to events (command "on")
     --host -h The host of the redis server (defaults to localhost)
     --port -p The port of the redis server (defaults to 6397)
     --password -a The password of the redis server
