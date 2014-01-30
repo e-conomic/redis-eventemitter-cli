@@ -2,6 +2,14 @@
 
 Command line tool for redis-eventemitter.
 
+## Installation
+
+You can install it with npm
+
+```
+npm install redis-eventemitter-cli -g
+```
+
 ## Usage
 
 ```
