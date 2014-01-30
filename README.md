@@ -1,6 +1,6 @@
 # Redis-eventemitter CLI
 
-Command line tool for redis-eventemitter.
+Command line tool for [redis-eventemitter](https://github.com/freeall/redis-eventemitter).
 
 ## Installation
 
