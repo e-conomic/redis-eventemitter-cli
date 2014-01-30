@@ -21,7 +21,7 @@ Command line tool for redis-eventemitter.
     --port -p The port of the redis server (defaults to 6397)
     --password -a The password of the redis server
 
-    You can also save a file to HOME/.redis-eventemitter-cli.json with the host, porta and password like this
+    You can also save a file to HOME/.redis-eventemitter-cli.json with the host, port and password like this
 
     {
         "host": "localhost",

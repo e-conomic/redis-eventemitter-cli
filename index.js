@@ -25,7 +25,7 @@ var printUsage = function() {
 	console.log('    --port -p The port of the redis server (defaults to 6397)');
 	console.log('    --password -a The password of the redis server');
 	console.log('');
-	console.log('    You can also save a file to HOME/.redis-eventemitter-cli.json with the host, porta and password like this');
+	console.log('    You can also save a file to HOME/.redis-eventemitter-cli.json with the host, port and password like this');
 	console.log('');
 	console.log('    {');
 	console.log('        "host": "localhost",');
